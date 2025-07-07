@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Registration Form</h2>
+    <p class="amount">Registration Fee: ₹500</p>
+    
+    <form id="registrationForm"  method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="mobile" placeholder="Mobile Number" required pattern="^(\+91[\-\s]?)?[6-9]\d{9}$">
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="class" placeholder="Preferred Class" required>
+
+        <!-- Payment Mode Dropdown -->
+        <select name="payment_mode" required>
+            <option value="">Select Payment Mode</option>
+            <option value="UPI">UPI</option>
+            <option value="Card">Card</option>
+            <option value="Cash">Cash</option>
+            <option value="Net Banking">Net Banking</option>
+        </select>
+
+        <!-- OTP Section -->
+        <button type="button" onclick="generateOTP()">Generate OTP</button>
+        <div id="otpSection" style="display:none;">
+            <input type="text" id="otpInput" placeholder="Enter OTP">
+            <p id="timerDisplay">45</p>
+            <button type="button" id="resendOtpBtn" onclick="resendOTP()" disabled>Resend OTP</button>
+        </div>
+
+        <!-- Submit Form -->
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
